@@ -1,5 +1,5 @@
-# Build Dependencies
-setuptools>=42
+pip>=23.2
+setuptools>=65
 wheel
 build
 
