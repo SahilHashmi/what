@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watsapp-api"
+description = "Unified API for Watsapp services"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["booking_manager", "dashboard", "cancellations_panel", "chat", "user_management", "ai_settings", "admin_controls", "monitoring", "reports", "standby"]

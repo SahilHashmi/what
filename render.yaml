@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: watsapp-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+    envVars:
+      - key: PORT
+        fromEnv: PORT
+    healthCheckPath: /health
+    healthCheckTimeout: 30
+    healthCheckInterval: 10
+    healthCheckRetries: 3
+    healthCheckInitialDelay: 10
+    
+    # Add database configuration if needed
+    # envVars:
+    #   - key: DATABASE_URL
+    #     fromEnv: DATABASE_URL
+    #   - key: DATABASE_NAME
+    #     fromEnv: DATABASE_NAME
